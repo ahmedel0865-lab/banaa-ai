@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Binaa AI | بِناء AI</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="بِناء AI بتدخّل الذكاء الاصطناعي في شركات المقاولات والمكاتب الهندسية: حصر كميات أسرع، أخطاء أقل في اللوحات، وتقارير موقع في دقايق. أتمتة Revit و AutoCAD، MCP servers، وتدريب المهندسين.">
+<meta name="theme-color" content="#1F2A3A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Binaa AI">
+<meta property="og:title" content="بِناء AI | الذكاء الاصطناعي جوه شغل الموقع والمكتب">
+<meta property="og:description" content="حصر كميات أسرع 40–60%، أخطاء أقل في اللوحات، وتقارير موقع في دقايق. ابدأ بجلسة تقييم مجانية.">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: calm product page. One goal per section, 8px spacing grid, 12px radius, soft shadows.
+   Single light theme by choice: the brand palette below is fixed by the brief. */
+:root{
+  --primary:#3D5A80;        /* Slate Blue */
+  --secondary:#5B8E8C;      /* Soft Teal: icons, tints, borders (not small text: below AA on light) */
+  --accent:#D9A86C;         /* Warm Sand: CTAs only, one per section */
+  --bg:#F7F6F2;             /* Off-White */
+  --surface:#FFFFFF;
+  --border:#E4E2DC;
+  --text:#2B2D31;           /* Charcoal */
+  --text-2:#6B6F76;         /* Muted Gray */
+  --navy:#1F2A3A;           /* Deep Navy */
+  /* derived tints (same hues, lighter) */
+  --primary-tint:#E8EDF3;
+  --secondary-tint:#E6EFEE;
+  --accent-hover:#CF9B5B;
+  --on-navy:#F7F6F2;
+  --on-navy-2:#B9C1CC;
+  --danger:#A8432F;
+  --success:#2F6B53;
+  --grad:linear-gradient(135deg,var(--primary),var(--secondary));
+  /* type */
+  --f-ar:"IBM Plex Sans Arabic","Inter",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+  --f-en:"Inter","IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --fs-xs:.8125rem; --fs-sm:.875rem; --fs-base:1rem; --fs-md:1.125rem; --fs-lg:1.375rem; --fs-xl:1.75rem; --fs-2xl:2.25rem; --fs-3xl:clamp(2rem,5.2vw,3.25rem);
+  /* spacing: 8px system */
+  --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:40px;--s6:48px;--s8:64px;--s10:80px;--s12:96px;
+  --r:12px;
+  --shadow-sm:0 1px 2px rgba(31,42,58,.06),0 1px 3px rgba(31,42,58,.04);
+  --shadow:0 4px 16px rgba(31,42,58,.07),0 1px 3px rgba(31,42,58,.05);
+  --shadow-lg:0 16px 40px rgba(31,42,58,.12);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f-ar);font-size:var(--fs-base);line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html[lang="en"] body{font-family:var(--f-en);line-height:1.6}
+h1,h2,h3{line-height:1.25;margin:0;text-wrap:balance;color:var(--text)}
+h1{font-size:var(--fs-3xl);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.625rem,3.4vw,var(--fs-2xl));font-weight:700}
+h3{font-size:var(--fs-md);font-weight:600}
+p{margin:0}
+a{color:var(--primary)}
+img,svg{max-width:100%}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.num{font-variant-numeric:tabular-nums}
+[data-l]{display:none}
+html[lang="ar"] [data-l="ar"],html[lang="en"] [data-l="en"]{display:revert}
+html[lang="ar"] span[data-l="ar"],html[lang="en"] span[data-l="en"]{display:inline}
+.skip{position:absolute;inset-inline-start:var(--s2);top:-60px;background:var(--navy);color:var(--on-navy);padding:var(--s1) var(--s2);border-radius:8px;z-index:100}
+.skip:focus{top:calc(var(--s1) + env(safe-area-inset-top,0px))}
+:focus-visible{outline:3px solid var(--primary);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1200px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:768px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s1);min-height:48px;padding:12px 24px;border-radius:var(--r);font:inherit;font-weight:600;font-size:var(--fs-base);text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background-color .2s,border-color .2s,transform .2s,box-shadow .2s}
+.btn-accent{background:var(--accent);color:var(--text);box-shadow:var(--shadow-sm)}
+.btn-accent:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:#344E70;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--primary);border-color:var(--primary)}
+.btn-outline:hover{background:var(--primary-tint)}
+.btn-sm{min-height:40px;padding:8px 16px;font-size:var(--fs-sm)}
+.btn svg{flex:none}
+html[dir="rtl"] .flip{transform:scaleX(-1)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:rgba(247,246,242,.92)}
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(247,246,242,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+.header.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-sm)}
+.nav{display:flex;align-items:center;gap:var(--s3);min-height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:var(--fs-lg);color:var(--text);text-decoration:none;flex:none}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:var(--s3);margin-inline-start:auto}
+.nav-links a{color:var(--text);text-decoration:none;font-size:var(--fs-sm);font-weight:500;padding:var(--s1) 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--primary);border-bottom-color:var(--secondary)}
+.nav-actions{display:flex;align-items:center;gap:var(--s1);margin-inline-start:auto}
+.lang{min-height:40px;min-width:48px;padding:6px 12px;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:10px;font:inherit;font-size:var(--fs-sm);font-weight:600;cursor:pointer}
+.lang:hover{border-color:var(--primary);color:var(--primary)}
+.menu-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--border);background:var(--surface);border-radius:10px;cursor:pointer;color:var(--text)}
+.nav{gap:var(--s2)}
+.cta-short{display:none!important}
+@media (max-width:479px){.cta-long{display:none!important}.cta-short{display:inline!important}.nav .btn-sm{padding:8px 14px}}
+@media (min-width:1024px){
+  .nav-links{display:flex}
+  .nav-actions{margin-inline-start:var(--s2)}
+  .menu-btn{display:none}
+}
+.mobile-menu{border-top:1px solid var(--border);background:var(--bg)}
+.mobile-menu ul{list-style:none;margin:0;padding:var(--s1) 0 var(--s2)}
+.mobile-menu a{display:block;padding:14px 0;color:var(--text);text-decoration:none;font-weight:500;border-bottom:1px solid var(--border)}
+.mobile-menu .btn{width:100%;margin-top:var(--s2)}
+@media (min-width:1024px){.mobile-menu{display:none!important}}
+
+/* sections */
+section{padding-block:var(--s10)}
+@media (min-width:1024px){section{padding-block:var(--s12)}}
+.sec-head{max-width:720px;margin-bottom:var(--s6);display:grid;gap:var(--s2)}
+.sec-head.center{margin-inline:auto;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:var(--s1);font-size:var(--fs-sm);font-weight:600;color:var(--primary);letter-spacing:.02em}
+html[lang="en"] .eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:var(--fs-xs)}
+.eyebrow::before{content:"";width:24px;height:2px;border-radius:2px;background:var(--secondary)}
+.center .eyebrow{justify-self:center}
+.lead{font-size:var(--fs-md);color:var(--text-2);max-width:62ch}
+.surface{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.dark{background:var(--navy);color:var(--on-navy)}
+.dark h2,.dark h3{color:var(--on-navy)}
+.dark .lead,.dark p{color:var(--on-navy-2)}
+.dark .eyebrow{color:#C9D6E6}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#D6D3CB}
+.grid{display:grid;gap:var(--s3)}
+@media (min-width:768px){.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1024px){.g4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:768px) and (max-width:1023px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--secondary-tint);color:var(--secondary);flex:none}
+.ico.p{background:var(--primary-tint);color:var(--primary)}
+.note{font-size:var(--fs-xs);color:var(--text-2)}
+.dark .note{color:var(--on-navy-2)}
+
+/* hero */
+.hero{padding-block:var(--s6) var(--s10);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -20% auto auto;width:720px;height:720px;border-radius:50%;background:radial-gradient(closest-side,rgba(91,142,140,.14),transparent);pointer-events:none}
+html[dir="rtl"] .hero::before{inset:-40% auto auto -20%}
+.hero-grid{display:grid;gap:var(--s6);align-items:center;position:relative}
+@media (min-width:1024px){.hero-grid{grid-template-columns:1.05fr 1fr;gap:var(--s8)}.hero{padding-block:var(--s8) var(--s12)}}
+.badge{display:inline-flex;align-items:center;gap:var(--s1);padding:6px 14px 6px 6px;border-radius:999px;background:var(--surface);border:1px solid var(--border);font-size:var(--fs-sm);color:var(--text);box-shadow:var(--shadow-sm);text-decoration:none}
+html[dir="rtl"] .badge{padding:6px 6px 6px 14px}
+.badge b{background:var(--primary);color:#fff;border-radius:999px;padding:2px 10px;font-size:var(--fs-xs);font-weight:600}
+.hero h1{margin-top:var(--s3)}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin-top:var(--s3)}
+.ctas{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s4)}
+@media (max-width:479px){.ctas .btn{flex:1 1 100%}}
+.trust{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin-top:var(--s4);padding:0;list-style:none;font-size:var(--fs-sm);color:var(--text-2)}
+.trust li{display:flex;align-items:center;gap:var(--s1)}
+.trust svg{color:var(--secondary)}
+
+/* product mock */
+.mock{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden;min-width:0}
+.mock-bar{display:flex;align-items:center;gap:var(--s1);padding:12px var(--s2);border-bottom:1px solid var(--border);background:#FBFAF8;font-size:var(--fs-xs);color:var(--text-2)}
+.mock-bar i{width:10px;height:10px;border-radius:50%;background:var(--border);display:block}
+.mock-bar span{margin-inline-start:var(--s1)}
+.mock-body{display:grid;grid-template-columns:1fr}
+@media (min-width:560px){.mock-body{grid-template-columns:150px 1fr}}
+.mock-side{display:none;border-inline-end:1px solid var(--border);padding:var(--s2);font-size:var(--fs-xs);color:var(--text-2);background:#FCFCFA}
+@media (min-width:560px){.mock-side{display:block}}
+.mock-side b{display:block;color:var(--text);font-size:var(--fs-xs);margin-bottom:var(--s1)}
+.mock-side ul{list-style:none;margin:0 0 var(--s2);padding:0;display:grid;gap:6px}
+.mock-side li{display:flex;justify-content:space-between;gap:var(--s1)}
+.mock-side .on{color:var(--primary);font-weight:600}
+.chat{padding:var(--s2);display:grid;gap:12px;font-size:var(--fs-sm);min-width:0}
+.msg{max-width:88%;padding:10px 14px;border-radius:12px;line-height:1.6}
+.msg.me{background:var(--primary-tint);color:var(--text);justify-self:start;border-end-start-radius:4px}
+.msg.ai{background:var(--surface);border:1px solid var(--border);justify-self:end;border-end-end-radius:4px;box-shadow:var(--shadow-sm)}
+.msg.ai small{display:block;color:var(--text-2);font-size:var(--fs-xs);margin-top:4px}
+.qty{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s1);margin-top:var(--s1)}
+.qty div{background:var(--bg);border-radius:8px;padding:8px;text-align:center}
+.qty b{display:block;font-size:clamp(.9375rem,2.6vw,var(--fs-md));color:var(--primary);white-space:nowrap}
+.qty span{font-size:var(--fs-xs);color:var(--text-2)}
+.mock-input{display:flex;align-items:center;gap:var(--s1);margin:0 var(--s2) var(--s2);padding:10px 12px;border:1px solid var(--border);border-radius:10px;color:var(--text-2);font-size:var(--fs-sm)}
+.mock-input .send{margin-inline-start:auto;width:28px;height:28px;border-radius:8px;background:var(--grad);display:grid;place-items:center;color:#fff}
+.mock-foot{display:flex;flex-wrap:wrap;gap:var(--s1);padding:12px var(--s2);border-top:1px solid var(--border);font-size:var(--fs-xs);color:var(--text-2)}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--secondary-tint);color:#2F5654;font-size:var(--fs-xs);font-weight:600}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--secondary)}
+
+/* problem */
+.pain{padding:var(--s4);display:grid;gap:var(--s2);align-content:start}
+.pain .stat{font-size:var(--fs-xl);font-weight:700;color:var(--primary);line-height:1.1}
+.pain p{color:var(--text-2)}
+
+/* services */
+.svc{padding:var(--s4);display:grid;gap:var(--s2);align-content:start}
+.svc p{color:var(--text-2)}
+.svc ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--s1);font-size:var(--fs-sm)}
+.svc li{display:flex;gap:var(--s1);align-items:flex-start}
+.svc li::before{content:"";flex:none;width:6px;height:6px;margin-top:.65em;border-radius:50%;background:var(--secondary)}
+.tag-new{justify-self:start;font-size:var(--fs-xs);font-weight:600;color:var(--primary);background:var(--primary-tint);padding:2px 10px;border-radius:999px}
+
+/* personas */
+.tabs{display:flex;gap:var(--s1);padding:6px;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow-x:auto;max-width:100%;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;min-height:48px;padding:10px 18px;border:0;border-radius:10px;background:transparent;font:inherit;font-weight:600;font-size:var(--fs-sm);color:var(--text-2);cursor:pointer;display:flex;align-items:center;gap:var(--s1);white-space:nowrap;transition:background-color .2s,color .2s}
+.tab:hover{color:var(--text);background:var(--bg)}
+.tab[aria-selected="true"]{background:var(--primary);color:#fff}
+.panel{margin-top:var(--s3);display:grid;gap:var(--s3)}
+@media (min-width:1024px){.panel{grid-template-columns:1fr 1.6fr;align-items:start}}
+.panel-intro{display:grid;gap:var(--s2)}
+.panel-intro p{color:var(--text-2)}
+.quote-line{border-inline-start:3px solid var(--secondary);padding-inline-start:var(--s2);color:var(--text);font-weight:500}
+.gains{display:grid;gap:var(--s2)}
+@media (min-width:768px){.gains{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.gain{padding:var(--s3);display:grid;gap:var(--s1);align-content:start}
+.gain .big{font-size:var(--fs-xl);font-weight:700;color:var(--primary);line-height:1.15}
+.gain .k{font-size:var(--fs-xs);font-weight:600;color:var(--text-2);letter-spacing:.02em}
+.gain p{font-size:var(--fs-sm);color:var(--text-2)}
+
+/* features */
+.feat{padding:var(--s3);display:grid;gap:12px;grid-template-rows:auto auto 1fr auto}
+.feat-top{display:flex;align-items:center;justify-content:space-between;gap:var(--s2)}
+.saving{font-weight:700;color:var(--primary);background:var(--primary-tint);border-radius:8px;padding:4px 10px;font-size:var(--fs-sm)}
+.feat p{color:var(--text-2);font-size:var(--fs-sm)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:var(--fs-xs);border:1px solid var(--border);border-radius:999px;padding:2px 10px;color:var(--text-2);background:var(--bg);direction:ltr}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:var(--s3);counter-reset:s}
+@media (min-width:768px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1024px){.steps{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.step{position:relative;padding:var(--s3);border-radius:var(--r);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);display:grid;gap:12px;align-content:start;counter-increment:s}
+.step::before{content:counter(s);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:var(--grad);color:#fff;font-family:var(--f-en)}
+.step .dur{font-size:var(--fs-xs);font-weight:600;color:#C9D6E6;background:rgba(255,255,255,.08);justify-self:start;padding:2px 10px;border-radius:999px}
+.dark .closing{margin-top:var(--s6);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s4);border-radius:var(--r);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.dark .closing p{color:var(--on-navy);font-size:var(--fs-md);font-weight:600}
+
+/* proof */
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2)}
+@media (min-width:1024px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.stat-card{padding:var(--s3);display:grid;gap:4px;align-content:start}
+.stat-card b{font-size:clamp(1.5rem,3.5vw,2.25rem);color:var(--primary);line-height:1.15;font-variant-numeric:tabular-nums}
+.stat-card > span{font-size:var(--fs-sm);color:var(--text-2)}
+.logos{margin-top:var(--s6);display:grid;gap:var(--s2)}
+.logos-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2)}
+@media (min-width:768px){.logos-row{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.logo-slot{height:64px;border:1.5px dashed var(--border);border-radius:var(--r);display:grid;place-items:center;font-size:var(--fs-xs);color:var(--text-2);background:var(--bg);text-align:center;padding:var(--s1)}
+.tests{margin-top:var(--s6)}
+.test{padding:var(--s4);display:grid;gap:var(--s2);align-content:start;position:relative}
+.test blockquote{margin:0;font-size:var(--fs-md);line-height:1.7}
+.test figcaption{display:flex;align-items:center;gap:12px;font-size:var(--fs-sm);color:var(--text-2)}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--secondary-tint);color:var(--secondary);display:grid;place-items:center;font-weight:700;flex:none}
+.placeholder-tag{justify-self:start;font-size:var(--fs-xs);font-weight:600;color:#7A5A2E;background:#F6EBDD;border-radius:6px;padding:2px 8px}
+
+/* pricing */
+.plans{align-items:stretch}
+.plan{padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
+.plan .price{font-size:var(--fs-xl);font-weight:700;color:var(--text)}
+.plan .price small{font-size:var(--fs-sm);font-weight:500;color:var(--text-2)}
+.plan p{color:var(--text-2);font-size:var(--fs-sm)}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:var(--fs-sm)}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li svg{flex:none;margin-top:.3em;color:var(--secondary)}
+.plan .btn{margin-top:auto}
+.plan.featured{border:2px solid var(--primary);box-shadow:var(--shadow)}
+.plan .ribbon{align-self:flex-start;font-size:var(--fs-xs);font-weight:600;color:#fff;background:var(--primary);padding:4px 12px;border-radius:999px}
+.training{margin-top:var(--s4);padding:var(--s3) var(--s4);display:grid;gap:var(--s2)}
+@media (min-width:768px){.training{grid-template-columns:1fr auto;align-items:center}}
+.tracks{display:flex;flex-wrap:wrap;gap:var(--s1);margin-top:var(--s1)}
+.track{font-size:var(--fs-sm);background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:6px 12px}
+.track b{color:var(--primary);font-weight:600}
+
+/* faq */
+.faq{max-width:840px;margin-inline:auto;display:grid;gap:12px}
+.faq details{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);transition:box-shadow .2s}
+.faq details[open]{box-shadow:var(--shadow-sm)}
+.faq summary{list-style:none;cursor:pointer;padding:20px var(--s3);font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:var(--s2);min-height:56px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:10px;height:10px;border-inline-end:2px solid var(--primary);border-bottom:2px solid var(--primary);transform:rotate(45deg);transition:transform .2s;margin-top:-4px}
+.faq details[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.faq details p{padding:0 var(--s3) 20px;color:var(--text-2)}
+
+/* contact */
+.contact{display:grid;gap:var(--s6)}
+@media (min-width:1024px){.contact{grid-template-columns:1fr 1.1fr;align-items:start}}
+.contact-info{display:grid;gap:var(--s3);align-content:start}
+.kv{display:grid;gap:2px}
+.kv > span{font-size:var(--fs-xs);color:var(--on-navy-2);font-weight:600}
+.kv b{font-weight:600;color:var(--on-navy);justify-self:start}
+.promise{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.promise li{display:flex;gap:12px;align-items:flex-start;color:var(--on-navy)}
+.promise svg{flex:none;margin-top:.25em;color:#9CC3C1}
+form.card{padding:var(--s4);color:var(--text)}
+form.card:hover,#formCard:hover{transform:none;box-shadow:var(--shadow-sm)}
+.field{display:grid;gap:6px;margin-bottom:var(--s3)}
+.field label{font-size:var(--fs-sm);font-weight:600;color:var(--text)}
+.field label .opt{color:var(--text-2);font-weight:400}
+.field input,.field select{width:100%;min-height:48px;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font:inherit;transition:border-color .2s,box-shadow .2s}
+.field input:hover,.field select:hover{border-color:#CFCBC2}
+.field input:focus,.field select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(61,90,128,.18)}
+.field.invalid input,.field.invalid select{border-color:var(--danger)}
+.field.valid input{border-color:var(--secondary)}
+.err{font-size:var(--fs-xs);color:var(--danger);min-height:1em;display:flex;gap:6px;align-items:center}
+.err:empty{display:none}
+.form-row{display:grid;gap:0 var(--s2)}
+@media (min-width:560px){.form-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+form .btn{width:100%}
+.privacy{margin-top:12px;font-size:var(--fs-xs);color:var(--text-2);text-align:center}
+.success{text-align:center;display:grid;gap:var(--s2);justify-items:center;padding:var(--s4) var(--s2)}
+.success .check{width:64px;height:64px;border-radius:50%;background:var(--secondary-tint);color:var(--success);display:grid;place-items:center}
+.success p{color:var(--text-2);max-width:40ch}
+
+/* footer */
+footer{background:var(--navy);color:var(--on-navy-2);border-top:1px solid rgba(255,255,255,.08);padding-block:var(--s6) var(--s4);font-size:var(--fs-sm)}
+.foot{display:grid;gap:var(--s4)}
+@media (min-width:768px){.foot{grid-template-columns:1.4fr 1fr 1fr}}
+footer .logo{color:var(--on-navy)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--s1)}
+footer a{color:var(--on-navy-2);text-decoration:none}
+footer a:hover{color:var(--on-navy)}
+footer h3{font-size:var(--fs-sm);color:var(--on-navy);margin-bottom:12px}
+.foot-bottom{margin-top:var(--s5);padding-top:var(--s3);border-top:1px solid rgba(255,255,255,.08);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2)}
+
+/* reveal: content is visible at rest; JS only hides items below the fold, then reveals them */
+.reveal.pending{opacity:0;transform:translateY(16px)}
+.reveal{transition:opacity .6s ease,transform .6s ease}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .reveal.pending{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span data-l="ar">انتقل للمحتوى</span><span data-l="en">Skip to content</span></a>
+
+<header class="header" id="header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="logo" href="#top" aria-label="Binaa AI">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#3D5A80"/><path d="M8 25V15l9-6 9 6v10" fill="none" stroke="#F7F6F2" stroke-width="2.2" stroke-linejoin="round"/><circle cx="17" cy="19" r="2.8" fill="#D9A86C"/></svg>
+      <span data-l="ar">بِناء AI</span><span data-l="en">Binaa AI</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#solution"><span data-l="ar">الحل</span><span data-l="en">Solution</span></a></li>
+      <li><a href="#roles"><span data-l="ar">مكسبك</span><span data-l="en">Your gains</span></a></li>
+      <li><a href="#features"><span data-l="ar">حالات الاستخدام</span><span data-l="en">Use cases</span></a></li>
+      <li><a href="#how"><span data-l="ar">إزاي بنشتغل</span><span data-l="en">How it works</span></a></li>
+      <li><a href="#pricing"><span data-l="ar">الباقات</span><span data-l="en">Plans</span></a></li>
+      <li><a href="#faq"><span data-l="ar">أسئلة شائعة</span><span data-l="en">FAQ</span></a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang" id="langBtn" type="button" aria-label="Switch to English" lang="en">EN</button>
+      <a class="btn btn-accent btn-sm" href="#contact"><span class="cta-long"><span data-l="ar">احجز تقييم مجاني</span><span data-l="en">Book free assessment</span></span><span class="cta-short"><span data-l="ar">احجز</span><span data-l="en">Book</span></span></a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path id="menuIcon" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <div class="wrap">
+      <ul>
+        <li><a href="#solution"><span data-l="ar">الحل</span><span data-l="en">Solution</span></a></li>
+        <li><a href="#roles"><span data-l="ar">مكسبك</span><span data-l="en">Your gains</span></a></li>
+        <li><a href="#features"><span data-l="ar">حالات الاستخدام</span><span data-l="en">Use cases</span></a></li>
+        <li><a href="#how"><span data-l="ar">إزاي بنشتغل</span><span data-l="en">How it works</span></a></li>
+        <li><a href="#pricing"><span data-l="ar">الباقات</span><span data-l="en">Plans</span></a></li>
+        <li><a href="#faq"><span data-l="ar">أسئلة شائعة</span><span data-l="en">FAQ</span></a></li>
+      </ul>
+      <a class="btn btn-accent" href="#contact"><span data-l="ar">احجز جلسة تقييم مجانية</span><span data-l="en">Book a free assessment</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO: one goal = book the free assessment -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <a class="badge" href="#features"><b><span data-l="ar">جديد</span><span data-l="en">New</span></b><span data-l="ar">اسأل موديل Revit بالكلام عن طريق MCP</span><span data-l="en">Ask your Revit model in plain language via MCP</span></a>
+      <h1 id="hero-title">
+        <span data-l="ar">خلّص الحصر والمراجعة <em>في ساعات مش أيام</em></span>
+        <span data-l="en">Finish take-offs and reviews <em>in hours, not days</em></span>
+      </h1>
+      <p class="lead">
+        <span data-l="ar">بندخّل الذكاء الاصطناعي جوه شغل شركات المقاولات والمكاتب الهندسية، من حصر الكميات ومراجعة اللوحات لحد Revit و AutoCAD، وبندرّب فريقك يستخدمه بنفسه.</span>
+        <span data-l="en">We put AI inside the daily work of contractors and engineering offices, from quantity take-off and drawing review to Revit and AutoCAD, and train your team to run it themselves.</span>
+      </p>
+      <div class="ctas">
+        <a class="btn btn-accent" href="#contact"><span data-l="ar">احجز جلسة تقييم مجانية</span><span data-l="en">Book a free assessment</span>
+          <svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-outline" href="#how"><span data-l="ar">شوف إزاي بنشتغل</span><span data-l="en">See how it works</span></a>
+      </div>
+      <ul class="trust">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">من مهندسين إنشاءات لمهندسين</span><span data-l="en">Built by construction engineers</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">بياناتك بتفضل جوه شركتك</span><span data-l="en">Your data stays in-house</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">رد خلال يوم عمل</span><span data-l="en">Reply within one working day</span></li>
+      </ul>
+    </div>
+
+    <!-- Product visual: an engineer chatting with the Revit model (CSS, no images to load) -->
+    <figure class="mock" style="margin:0" aria-label="مثال: مهندس بيسأل موديل Revit عن الكميات والمساعد بيرد بالأرقام">
+      <div class="mock-bar" dir="ltr"><i></i><i></i><i></i><span>Binaa Assistant · Tower-B.rvt</span></div>
+      <div class="mock-body">
+        <div class="mock-side">
+          <b><span data-l="ar">الموديل</span><span data-l="en">Model</span></b>
+          <ul>
+            <li><span data-l="ar">الدور الأرضي</span><span data-l="en">Ground</span><span class="num">G</span></li>
+            <li><span data-l="ar">الدور الأول</span><span data-l="en">Level 1</span><span class="num">L1</span></li>
+            <li><span data-l="ar">الدور الثاني</span><span data-l="en">Level 2</span><span class="num">L2</span></li>
+            <li class="on"><span data-l="ar">الدور الثالث</span><span data-l="en">Level 3</span><span class="num">L3</span></li>
+          </ul>
+          <b><span data-l="ar">متصل بـ</span><span data-l="en">Connected</span></b>
+          <ul dir="ltr"><li>Revit 2025</li><li>BOQ.xlsx</li></ul>
+        </div>
+        <div>
+          <div class="chat">
+            <div class="msg me"><span data-l="ar">طلّعلي كميات الدور التالت: خرسانة وحديد وأبواب.</span><span data-l="en">Give me Level 3 quantities: concrete, rebar and doors.</span></div>
+            <div class="msg ai">
+              <span data-l="ar">تمام، دي الكميات من الموديل الحالي:</span><span data-l="en">Done. Quantities from the current model:</span>
+              <div class="qty">
+                <div><b class="num ltr">186 m³</b><span data-l="ar">خرسانة</span><span data-l="en">Concrete</span></div>
+                <div><b class="num ltr">21.4 t</b><span data-l="ar">حديد</span><span data-l="en">Rebar</span></div>
+                <div><b class="num">42</b><span data-l="ar">باب</span><span data-l="en">Doors</span></div>
+              </div>
+              <small><span data-l="ar">اتضافت لجدول الحصر BOQ.xlsx · 3 حوائط ناقصها type</span><span data-l="en">Added to BOQ.xlsx · 3 walls missing a type</span></small>
+            </div>
+          </div>
+          <div class="mock-input" aria-hidden="true"><span data-l="ar">اسأل عن الموديل...</span><span data-l="en">Ask about the model...</span><span class="send"><svg class="flip" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+      </div>
+      <figcaption class="mock-foot"><span class="pill"><span data-l="ar">وقت الرد 8 ثواني</span><span data-l="en">Answered in 8 s</span></span><span data-l="ar">مثال توضيحي بأرقام افتراضية</span><span data-l="en">Illustrative example, sample figures</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- PROBLEM: one goal = recognise the pain -->
+<section class="surface" id="problem" aria-labelledby="problem-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span data-l="ar">المشكلة</span><span data-l="en">The problem</span></span>
+      <h2 id="problem-title"><span data-l="ar">مهندسينك بيضيّعوا أحسن وقتهم في شغل يتعمل أوتوماتيك</span><span data-l="en">Your engineers spend their best hours on work a machine can do</span></h2>
+    </div>
+    <div class="grid g3">
+      <article class="card pain reveal">
+        <div class="ico p"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3><span data-l="ar">الحصر بياخد أيام</span><span data-l="en">Take-offs take days</span></h3>
+        <p><span data-l="ar">نقل الأرقام من الموديل واللوحات لـ Excel يدوي، وأي تعديل في التصميم معناه تبدأ من الأول.</span><span data-l="en">Numbers are copied by hand from models and drawings into Excel, and every design change means starting over.</span></p>
+      </article>
+      <article class="card pain reveal">
+        <div class="ico p"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+        <h3><span data-l="ar">الأخطاء بتتكشف في الموقع</span><span data-l="en">Errors surface on site</span></h3>
+        <p><span data-l="ar">تعارض في اللوحات أو بند ناقص في المواصفات بيظهر وقت التنفيذ، ووقتها التعديل بيكلف أضعاف.</span><span data-l="en">A drawing clash or missing spec clause shows up during construction, when fixing it costs many times more.</span></p>
+      </article>
+      <article class="card pain reveal">
+        <div class="ico p"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h3><span data-l="ar">التقارير متفرقة</span><span data-l="en">Reports are scattered</span></h3>
+        <p><span data-l="ar">صور ورسايل واتساب وملفات Excel كتير، والإدارة مش شايفة صورة واضحة عن التقدم والتكلفة.</span><span data-l="en">Photos, WhatsApp messages and spreadsheets everywhere, and management has no clear view of progress or cost.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION: one goal = understand what we do -->
+<section id="solution" aria-labelledby="solution-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span data-l="ar">الحل</span><span data-l="en">The solution</span></span>
+      <h2 id="solution-title"><span data-l="ar">AI بيشتغل جوه أدواتك، وفريق عارف يستخدمه</span><span data-l="en">AI that works inside your tools, and a team that knows how to use it</span></h2>
+      <p class="lead"><span data-l="ar">أربع خدمات بتكمل بعض: نفهم شغلك، نربط الـ AI بأدواتك، نركّب الحل، ونسلّمه لفريقك.</span><span data-l="en">Four services that fit together: we learn how you work, connect AI to your tools, build the solution and hand it to your team.</span></p>
+    </div>
+    <div class="grid g4">
+      <article class="card svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
+        <h3><span data-l="ar">تطبيق الـ AI في الشركة</span><span data-l="en">AI implementation</span></h3>
+        <p><span data-l="ar">بندرس سير العمل ونحدد فين الـ AI يوفر وقت وفلوس، وبعدين نركّب الأدوات.</span><span data-l="en">We map your workflows, find where AI saves time and money, then deploy the tools.</span></p>
+        <ul><li><span data-l="ar">تقييم جاهزية الشركة</span><span data-l="en">Readiness assessment</span></li><li><span data-l="ar">سياسة استخدام وحماية بيانات</span><span data-l="en">Usage and data policy</span></li></ul>
+      </article>
+      <article class="card svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-7h6v7"/></svg></div>
+        <h3><span data-l="ar">أتمتة Revit و AutoCAD</span><span data-l="en">Revit and AutoCAD automation</span></h3>
+        <p><span data-l="ar">سكريبتات وأدوات جوه البرامج بتخلص المهام المتكررة في دقايق.</span><span data-l="en">Scripts and add-ins that turn repetitive tasks into minutes.</span></p>
+        <ul><li>Dynamo · pyRevit · Python</li><li><span data-l="ar">AutoLISP وأتمتة اللوحات</span><span data-l="en">AutoLISP and sheet automation</span></li></ul>
+      </article>
+      <article class="card svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="3" width="6" height="6" rx="1"/><rect x="16" y="15" width="6" height="6" rx="1"/><path d="M8 12h4M12 6v12M12 6h4M12 18h4"/></svg></div>
+        <span class="tag-new">MCP</span>
+        <h3><span data-l="ar">MCP servers لأدواتك</span><span data-l="en">MCP servers for your tools</span></h3>
+        <p><span data-l="ar">بنربط Claude و ChatGPT بـ Revit و Excel وأرشيفك، فالمهندس يطلب بالكلام والـ AI ينفّذ.</span><span data-l="en">We connect Claude and ChatGPT to Revit, Excel and your archive, so engineers ask in plain language and AI acts.</span></p>
+        <ul><li><span data-l="ar">استعلام وتعديل الموديل بالكلام</span><span data-l="en">Query and edit the model by chat</span></li><li><span data-l="ar">ربط آمن جوه الشركة</span><span data-l="en">Secure on-premise access</span></li></ul>
+      </article>
+      <article class="card svc reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></div>
+        <h3><span data-l="ar">تدريب المهندسين</span><span data-l="en">Engineer training</span></h3>
+        <p><span data-l="ar">كورسات عملية على ملفات مشاريع حقيقية، أونلاين أو في مقر الشركة.</span><span data-l="en">Hands-on courses on real project files, online or on-site.</span></p>
+        <ul><li><span data-l="ar">برامج للشركات وكورسات للأفراد</span><span data-l="en">In-house programs and public courses</span></li><li><span data-l="ar">شهادة إتمام</span><span data-l="en">Completion certificate</span></li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAS: one goal = see your own gain -->
+<section class="surface" id="roles" aria-labelledby="roles-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span data-l="ar">مكسبك حسب دورك</span><span data-l="en">Your gain, by role</span></span>
+      <h2 id="roles-title"><span data-l="ar">إنت مين في المشروع؟ شوف هتكسب إيه</span><span data-l="en">What's your role? See what you gain</span></h2>
+    </div>
+    <div class="tabs reveal" role="tablist" aria-label="Roles">
+      <button class="tab" role="tab" id="tab-owner" aria-controls="panel-owner" aria-selected="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></svg>
+        <span data-l="ar">مطوّر / مالك مشروع</span><span data-l="en">Developer / owner</span></button>
+      <button class="tab" role="tab" id="tab-eng" aria-controls="panel-eng" aria-selected="false" tabindex="-1">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 18h16M6 18v-4a6 6 0 0112 0v4M12 8V5M10 5h4"/></svg>
+        <span data-l="ar">مهندس موقع / مدير مشروع</span><span data-l="en">Site engineer / PM</span></button>
+      <button class="tab" role="tab" id="tab-inv" aria-controls="panel-inv" aria-selected="false" tabindex="-1">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>
+        <span data-l="ar">مستثمر</span><span data-l="en">Investor</span></button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-owner" aria-labelledby="tab-owner" tabindex="0">
+      <div class="panel-intro">
+        <h3><span data-l="ar">تكلفة متوقعة، وقرارات أسرع</span><span data-l="en">Predictable cost, faster decisions</span></h3>
+        <p><span data-l="ar">إنت محتاج تعرف المشروع ماشي فين وبيكلف كام، من غير ما تستنى اجتماع الأسبوع.</span><span data-l="en">You need to know where the project stands and what it costs, without waiting for the weekly meeting.</span></p>
+        <p class="quote-line"><span data-l="ar">مثال: مقارنة بديلين للتصميم بالكميات والتكلفة في نفس اليوم.</span><span data-l="en">Example: compare two design options by quantity and cost on the same day.</span></p>
+      </div>
+      <div class="gains">
+        <div class="card gain"><span class="k"><span data-l="ar">تكلفة أقل</span><span data-l="en">Cost reduced</span></span><span class="big num"><span data-l="ar">حتى 30%</span><span data-l="en">Up to 30%</span></span><p><span data-l="ar">أقل في فروق الكميات بين الحصر والتنفيذ.</span><span data-l="en">fewer quantity gaps between take-off and construction.</span></p></div>
+        <div class="card gain"><span class="k"><span data-l="ar">وقت أقل</span><span data-l="en">Time saved</span></span><span class="big num"><span data-l="ar">يوم بدل أسبوع</span><span data-l="en">1 day, not 1 week</span></span><p><span data-l="ar">لتسعير بديل تصميم جديد.</span><span data-l="en">to price a new design option.</span></p></div>
+        <div class="card gain"><span class="k"><span data-l="ar">رؤية أوضح</span><span data-l="en">Clear view</span></span><span class="big num"><span data-l="ar">تقرير أسبوعي</span><span data-l="en">Weekly report</span></span><p><span data-l="ar">تقدم وتكلفة المشروع في صفحة واحدة، أوتوماتيك.</span><span data-l="en">progress and cost on one page, automatically.</span></p></div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-eng" aria-labelledby="tab-eng" tabindex="0" hidden>
+      <div class="panel-intro">
+        <h3><span data-l="ar">شغل ورق أقل، وقت أكتر في الموقع</span><span data-l="en">Less paperwork, more time on site</span></h3>
+        <p><span data-l="ar">الـ AI بياخد منك الحصر والتقارير وترقيم اللوحات، وإنت تركز على التنفيذ.</span><span data-l="en">AI takes over take-offs, reports and sheet numbering so you can focus on delivery.</span></p>
+        <p class="quote-line"><span data-l="ar">مثال: صور الموقع ورسايل الواتساب تتحول لتقرير يومي منظم في 10 دقايق.</span><span data-l="en">Example: site photos and WhatsApp messages become a structured daily report in 10 minutes.</span></p>
+      </div>
+      <div class="gains">
+        <div class="card gain"><span class="k"><span data-l="ar">وقت أقل</span><span data-l="en">Time saved</span></span><span class="big num ltr">40–60%</span><p><span data-l="ar">أسرع في حصر الكميات من موديل Revit.</span><span data-l="en">faster quantity take-off from the Revit model.</span></p></div>
+        <div class="card gain"><span class="k"><span data-l="ar">تقارير أسرع</span><span data-l="en">Faster reports</span></span><span class="big num"><span data-l="ar">10 دقايق</span><span data-l="en">10 minutes</span></span><p><span data-l="ar">للتقرير اليومي بدل ساعة أو أكتر.</span><span data-l="en">for the daily report instead of an hour or more.</span></p></div>
+        <div class="card gain"><span class="k"><span data-l="ar">أخطاء أقل</span><span data-l="en">Fewer errors</span></span><span class="big num"><span data-l="ar">فحص قبل الإصدار</span><span data-l="en">Pre-issue check</span></span><p><span data-l="ar">مراجعة تلقائية للوحات والـ tags قبل ما تطلع.</span><span data-l="en">automatic sheet and tag review before issue.</span></p></div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-inv" aria-labelledby="tab-inv" tabindex="0" hidden>
+      <div class="panel-intro">
+        <h3><span data-l="ar">شفافية ومخاطر أقل في محفظتك</span><span data-l="en">Transparency and lower risk across your portfolio</span></h3>
+        <p><span data-l="ar">بيانات المشروع تتحول لمؤشرات واضحة، فتعرف بدري لو في تأخير أو زيادة في التكلفة.</span><span data-l="en">Project data turns into clear indicators, so you see delays or overruns early.</span></p>
+        <p class="quote-line"><span data-l="ar">مثال: تنبيه بتأخير محتمل في بند الخرسانة قبل ما يأثر على الجدول.</span><span data-l="en">Example: an alert about a likely concrete delay before it hits the schedule.</span></p>
+      </div>
+      <div class="gains">
+        <div class="card gain"><span class="k"><span data-l="ar">تنبيه مبكر</span><span data-l="en">Early warning</span></span><span class="big num"><span data-l="ar">أسابيع قبلها</span><span data-l="en">Weeks ahead</span></span><p><span data-l="ar">توقّع التأخيرات من بيانات الجدول والتكلفة.</span><span data-l="en">delay forecasts from schedule and cost data.</span></p></div>
+        <div class="card gain"><span class="k"><span data-l="ar">تكلفة متابعة أقل</span><span data-l="en">Lower overhead</span></span><span class="big num ltr">−25%</span><p><span data-l="ar">في وقت إعداد تقارير التكلفة والجدول.</span><span data-l="en">time spent preparing cost and schedule reports.</span></p></div>
+        <div class="card gain"><span class="k"><span data-l="ar">قرار مبني على أرقام</span><span data-l="en">Data-backed decisions</span></span><span class="big num"><span data-l="ar">لوحة واحدة</span><span data-l="en">One dashboard</span></span><p><span data-l="ar">لكل مشاريعك بنفس المؤشرات.</span><span data-l="en">for all projects with the same indicators.</span></p></div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:var(--s3)"><span data-l="ar">الأرقام تقديرية من حالات استخدام مشابهة، وبنقيسها فعليًا على مشروعك في المرحلة التجريبية.</span><span data-l="en">Figures are estimates from similar use cases; we measure them on your project during the pilot.</span></p>
+  </div>
+</section>
+
+<!-- FEATURES: one goal = see concrete use cases -->
+<section id="features" aria-labelledby="features-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span data-l="ar">حالات الاستخدام</span><span data-l="en">Use cases</span></span>
+      <h2 id="features-title"><span data-l="ar">ست مهام بنسرّعها من أول مشروع</span><span data-l="en">Six tasks we speed up from the first project</span></h2>
+      <p class="lead"><span data-l="ar">التوفير المتوقع في الوقت، ويختلف حسب الشركة وحجم المشروع.</span><span data-l="en">Expected time saved; varies by company and project size.</span></p>
+    </div>
+    <div class="grid g3">
+      <article class="card feat reveal"><div class="feat-top"><h3><span data-l="ar">حصر الكميات (BOQ)</span><span data-l="en">Quantity take-off (BOQ)</span></h3><span class="saving num ltr">−40–60%</span></div><p><span data-l="ar">استخراج الكميات من موديل Revit أو اللوحات وتجهيز جدول الحصر تلقائي.</span><span data-l="en">Extract quantities from the Revit model or drawings and build the BOQ automatically.</span></p><div class="chips"><span class="chip">Revit</span><span class="chip">Dynamo</span><span class="chip">Excel</span></div></article>
+      <article class="card feat reveal"><div class="feat-top"><h3><span data-l="ar">أسئلة للموديل بالكلام</span><span data-l="en">Ask the model in plain language</span></h3><span class="saving num ltr">−50%</span></div><p><span data-l="ar">"كام باب في الدور التالت؟" أو "غيّر نوع الحوائط دي" والـ AI ينفّذ جوه Revit.</span><span data-l="en">"How many doors on level 3?" or "Change these wall types" and AI does it inside Revit.</span></p><div class="chips"><span class="chip">MCP</span><span class="chip">Revit API</span><span class="chip">Claude</span></div></article>
+      <article class="card feat reveal"><div class="feat-top"><h3><span data-l="ar">تجهيز اللوحات</span><span data-l="en">Sheet setup</span></h3><span class="saving num ltr">−70%</span></div><p><span data-l="ar">إنشاء اللوحات وترقيمها ووضع الـ tags أوتوماتيك.</span><span data-l="en">Create, number and tag sheets automatically.</span></p><div class="chips"><span class="chip">pyRevit</span><span class="chip">AutoLISP</span></div></article>
+      <article class="card feat reveal"><div class="feat-top"><h3><span data-l="ar">مراجعة المواصفات والعقود</span><span data-l="en">Spec and contract review</span></h3><span class="saving num ltr">−50%</span></div><p><span data-l="ar">مساعد AI يقرا المواصفات ويطلّع البنود المتعارضة أو الناقصة.</span><span data-l="en">An AI assistant flags conflicting or missing clauses in specs.</span></p><div class="chips"><span class="chip">LLM</span><span class="chip">PDF</span></div></article>
+      <article class="card feat reveal"><div class="feat-top"><h3><span data-l="ar">التقرير اليومي للموقع</span><span data-l="en">Daily site report</span></h3><span class="saving num ltr">−60%</span></div><p><span data-l="ar">تحويل صور ورسايل الموقع لتقرير يومي منظم.</span><span data-l="en">Turn site photos and messages into a structured daily report.</span></p><div class="chips"><span class="chip">LLM</span><span class="chip">WhatsApp</span></div></article>
+      <article class="card feat reveal"><div class="feat-top"><h3><span data-l="ar">الجدول الزمني والتكلفة</span><span data-l="en">Schedule and cost</span></h3><span class="saving num ltr">−25%</span></div><p><span data-l="ar">تحليل التأخيرات وتوقّع المخاطر من بيانات المشروع.</span><span data-l="en">Analyse delays and forecast risk from project data.</span></p><div class="chips"><span class="chip">Primavera</span><span class="chip">Power BI</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS: one goal = trust the low-risk path -->
+<section class="dark" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span data-l="ar">إزاي بنشتغل</span><span data-l="en">How it works</span></span>
+      <h2 id="how-title"><span data-l="ar">نبدأ صغير، ونكبّر لما الأرقام تثبت</span><span data-l="en">Start small, scale when the numbers prove it</span></h2>
+    </div>
+    <ol class="steps">
+      <li class="step reveal"><h3><span data-l="ar">تقييم</span><span data-l="en">Assess</span></h3><p><span data-l="ar">زيارة ومقابلات مع الفرق لتحديد أكتر المهام اللي بتاخد وقت.</span><span data-l="en">Visits and interviews to find the most time-consuming tasks.</span></p><span class="dur"><span data-l="ar">1–2 أسبوع</span><span data-l="en">1–2 weeks</span></span></li>
+      <li class="step reveal"><h3><span data-l="ar">مشروع تجريبي</span><span data-l="en">Pilot</span></h3><p><span data-l="ar">حل واحد على مشروع حقيقي، ونقيس الوقت قبل وبعد.</span><span data-l="en">One solution on one live project, measured before and after.</span></p><span class="dur"><span data-l="ar">3–6 أسابيع</span><span data-l="en">3–6 weeks</span></span></li>
+      <li class="step reveal"><h3><span data-l="ar">تعميم</span><span data-l="en">Roll out</span></h3><p><span data-l="ar">ننقل الحل لباقي الأقسام والمشاريع مع توثيق كامل.</span><span data-l="en">Extend across departments and projects, fully documented.</span></p><span class="dur"><span data-l="ar">1–3 شهور</span><span data-l="en">1–3 months</span></span></li>
+      <li class="step reveal"><h3><span data-l="ar">تدريب ومتابعة</span><span data-l="en">Train and support</span></h3><p><span data-l="ar">تدريب الفريق ودعم مستمر لحد ما الأداة تبقى جزء من الشغل.</span><span data-l="en">Team training and support until the tool is part of daily work.</span></p><span class="dur"><span data-l="ar">مستمر</span><span data-l="en">Ongoing</span></span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF: one goal = believe it -->
+<section id="proof" aria-labelledby="proof-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span data-l="ar">بالأرقام</span><span data-l="en">By the numbers</span></span>
+      <h2 id="proof-title"><span data-l="ar">نتايج بتتقاس، مش وعود</span><span data-l="en">Results you can measure, not promises</span></h2>
+    </div>
+    <div class="stats">
+      <div class="card stat-card reveal"><b class="ltr">40–60%</b><span data-l="ar">توفير متوقع في وقت الحصر</span><span data-l="en">expected take-off time saved</span></div>
+      <div class="card stat-card reveal"><b>6</b><span data-l="ar">حالات استخدام جاهزة للتطبيق</span><span data-l="en">ready-to-deploy use cases</span></div>
+      <div class="card stat-card reveal"><b>82</b><span data-l="ar">ساعة تدريب عملي في 4 مسارات</span><span data-l="en">hands-on training hours, 4 tracks</span></div>
+      <div class="card stat-card reveal"><b><span data-l="ar">يوم عمل</span><span data-l="en">1 day</span></b><span data-l="ar">أقصى وقت للرد على طلبك</span><span data-l="en">maximum reply time</span></div>
+    </div>
+
+    <div class="logos reveal">
+      <p class="note"><span data-l="ar">شركاء المرحلة التجريبية</span><span data-l="en">Pilot partners</span></p>
+      <div class="logos-row" aria-label="Client logo placeholders">
+        <div class="logo-slot"><span data-l="ar">شعار عميل</span><span data-l="en">Client logo</span></div>
+        <div class="logo-slot"><span data-l="ar">شعار عميل</span><span data-l="en">Client logo</span></div>
+        <div class="logo-slot"><span data-l="ar">شعار عميل</span><span data-l="en">Client logo</span></div>
+        <div class="logo-slot"><span data-l="ar">شعار عميل</span><span data-l="en">Client logo</span></div>
+        <div class="logo-slot"><span data-l="ar">شعار عميل</span><span data-l="en">Client logo</span></div>
+      </div>
+    </div>
+
+    <div class="grid g2 tests">
+      <figure class="card test reveal" style="margin:0">
+        <span class="placeholder-tag"><span data-l="ar">مكان شهادة عميل</span><span data-l="en">Testimonial placeholder</span></span>
+        <blockquote><span data-l="ar">هنا هتظهر شهادة مدير مشروع بعد أول مشروع تجريبي، مع الرقم اللي اتقاس فعليًا.</span><span data-l="en">A project manager's testimonial will appear here after the first pilot, with the measured result.</span></blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">م</span><span><span data-l="ar">الاسم، المسمى الوظيفي، الشركة</span><span data-l="en">Name, title, company</span></span></figcaption>
+      </figure>
+      <figure class="card test reveal" style="margin:0">
+        <span class="placeholder-tag"><span data-l="ar">مكان شهادة عميل</span><span data-l="en">Testimonial placeholder</span></span>
+        <blockquote><span data-l="ar">هنا هتظهر شهادة مهندس اتدرّب معانا، مع اسم الكورس والأداة اللي بناها.</span><span data-l="en">A trained engineer's testimonial will appear here, with the course and the tool they built.</span></blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">ه</span><span><span data-l="ar">الاسم، المسمى الوظيفي، الشركة</span><span data-l="en">Name, title, company</span></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING: one goal = pick a starting point -->
+<section class="surface" id="pricing" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span data-l="ar">الباقات</span><span data-l="en">Plans</span></span>
+      <h2 id="pricing-title"><span data-l="ar">ابدأ مجانًا، وادفع على نطاق واضح</span><span data-l="en">Start free, then pay for a clear scope</span></h2>
+      <p class="lead"><span data-l="ar">سعر الباقات المدفوعة بيتحدد بعد جلسة التقييم حسب حجم الشركة والمشروع.</span><span data-l="en">Paid plans are quoted after the assessment, based on company and project size.</span></p>
+    </div>
+    <div class="grid g3 plans">
+      <article class="card plan reveal">
+        <h3><span data-l="ar">جلسة تقييم</span><span data-l="en">Assessment</span></h3>
+        <div class="price"><span data-l="ar">مجانًا</span><span data-l="en">Free</span></div>
+        <p><span data-l="ar">للي عايز يعرف الـ AI هيفيده في إيه.</span><span data-l="en">For teams asking where AI fits.</span></p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">جلسة 60 دقيقة مع مهندس</span><span data-l="en">60-minute session with an engineer</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">أكتر 3 مهام هتوفر وقت</span><span data-l="en">Top 3 tasks to automate</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">تقدير مبدئي للتوفير</span><span data-l="en">Rough savings estimate</span></li>
+        </ul>
+        <a class="btn btn-outline" href="#contact" data-need="assess"><span data-l="ar">احجز الجلسة</span><span data-l="en">Book the session</span></a>
+      </article>
+      <article class="card plan featured reveal">
+        <span class="ribbon"><span data-l="ar">الأنسب للبداية</span><span data-l="en">Best place to start</span></span>
+        <h3><span data-l="ar">مشروع تجريبي</span><span data-l="en">Pilot project</span></h3>
+        <div class="price"><span data-l="ar">سعر ثابت</span><span data-l="en">Fixed price</span> <small><span data-l="ar">· 3–6 أسابيع</span><span data-l="en">· 3–6 weeks</span></small></div>
+        <p><span data-l="ar">حل واحد على مشروع حقيقي بنتيجة متقاسة.</span><span data-l="en">One solution on a live project with measured results.</span></p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">أداة شغالة جوه Revit أو Excel أو غيرهم</span><span data-l="en">A working tool inside Revit, Excel or others</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">قياس الوقت قبل وبعد</span><span data-l="en">Before-and-after time measurement</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">تدريب الفريق المستخدم</span><span data-l="en">Training for the users</span></li>
+        </ul>
+        <a class="btn btn-primary" href="#contact" data-need="pilot"><span data-l="ar">اطلب عرض سعر</span><span data-l="en">Request a quote</span></a>
+      </article>
+      <article class="card plan reveal">
+        <h3><span data-l="ar">برنامج الشركة</span><span data-l="en">Company program</span></h3>
+        <div class="price"><span data-l="ar">حسب النطاق</span><span data-l="en">Custom</span></div>
+        <p><span data-l="ar">تعميم الحلول على كل الأقسام والمشاريع.</span><span data-l="en">Roll solutions out across departments and projects.</span></p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">عدة حلول و MCP servers</span><span data-l="en">Multiple solutions and MCP servers</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">برنامج تدريب داخلي</span><span data-l="en">In-house training program</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">دعم ومتابعة شهرية</span><span data-l="en">Monthly support</span></li>
+        </ul>
+        <a class="btn btn-outline" href="#contact" data-need="program"><span data-l="ar">كلّمنا</span><span data-l="en">Talk to us</span></a>
+      </article>
+    </div>
+    <div class="card training reveal">
+      <div>
+        <h3><span data-l="ar">كورسات للمهندسين الأفراد</span><span data-l="en">Courses for individual engineers</span></h3>
+        <div class="tracks">
+          <span class="track"><span data-l="ar">الـ AI للمهندس</span><span data-l="en">AI for engineers</span> · <b class="ltr">12 h</b></span>
+          <span class="track">Revit + AI · Dynamo · <b class="ltr">24 h</b></span>
+          <span class="track"><span data-l="ar">أتمتة AutoCAD</span><span data-l="en">AutoCAD automation</span> · <b class="ltr">16 h</b></span>
+          <span class="track"><span data-l="ar">Python للمهندسين</span><span data-l="en">Python for engineers</span> · <b class="ltr">30 h</b></span>
+        </div>
+      </div>
+      <a class="btn btn-outline" href="#contact" data-need="training"><span data-l="ar">اسأل عن المواعيد</span><span data-l="en">Ask about dates</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ: one goal = remove objections -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span data-l="ar">أسئلة شائعة</span><span data-l="en">FAQ</span></span>
+      <h2 id="faq-title"><span data-l="ar">قبل ما تبدأ، إجابات أسرع الأسئلة</span><span data-l="en">Quick answers before you start</span></h2>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary><span data-l="ar">هل بيانات مشاريعنا هتكون في أمان؟</span><span data-l="en">Is our project data safe?</span></summary><p><span data-l="ar">أيوه. بنحط سياسة استخدام واضحة، ونقدر نشغّل الحلول جوه شبكة الشركة من غير ما الملفات تطلع برّه.</span><span data-l="en">Yes. We set a clear usage policy and can run solutions inside your network so files never leave it.</span></p></details>
+      <details class="reveal"><summary><span data-l="ar">لازم فريقنا يعرف برمجة؟</span><span data-l="en">Does our team need to code?</span></summary><p><span data-l="ar">لأ. الأدوات بتتسلّم جاهزة، والتدريب بيبدأ من الصفر، وكتير من الشغل بيتعمل بالكلام مع المساعد.</span><span data-l="en">No. Tools are delivered ready to use, training starts from zero, and much of the work is done by chatting with the assistant.</span></p></details>
+      <details class="reveal"><summary><span data-l="ar">بتشتغلوا على أنهي برامج؟</span><span data-l="en">Which software do you work with?</span></summary><p><span data-l="ar">Revit و AutoCAD و Dynamo و Excel و Primavera و Power BI، وأي نظام عنده API نقدر نربطه بـ MCP.</span><span data-l="en">Revit, AutoCAD, Dynamo, Excel, Primavera and Power BI, plus any system with an API we can connect through MCP.</span></p></details>
+      <details class="reveal"><summary><span data-l="ar">إمتى هنشوف نتيجة؟</span><span data-l="en">When will we see results?</span></summary><p><span data-l="ar">في المشروع التجريبي، خلال 3 لـ 6 أسابيع، وبرقم متقاس قبل وبعد.</span><span data-l="en">In the pilot, within 3 to 6 weeks, with a measured before-and-after number.</span></p></details>
+      <details class="reveal"><summary><span data-l="ar">التدريب أونلاين ولا حضوري؟</span><span data-l="en">Is training online or in person?</span></summary><p><span data-l="ar">الاتنين. كورسات أونلاين للأفراد، وبرامج في مقر الشركة للفرق.</span><span data-l="en">Both. Online courses for individuals and on-site programs for teams.</span></p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT: one goal = submit the short form -->
+<section class="dark" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact">
+    <div class="contact-info reveal">
+      <span class="eyebrow"><span data-l="ar">تواصل معنا</span><span data-l="en">Contact</span></span>
+      <h2 id="contact-title"><span data-l="ar">احجز جلسة التقييم المجانية</span><span data-l="en">Book your free assessment</span></h2>
+      <p class="lead"><span data-l="ar">4 بيانات بس، وهنكلمك خلال يوم عمل نحدد ميعاد.</span><span data-l="en">Just 4 fields. We'll call within one working day to set a time.</span></p>
+      <ul class="promise">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">من غير أي التزام</span><span data-l="en">No commitment</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">مع مهندس، مش مندوب مبيعات</span><span data-l="en">With an engineer, not a salesperson</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span data-l="ar">تطلع بخطة أول 3 مهام</span><span data-l="en">Leave with a plan for your first 3 tasks</span></li>
+      </ul>
+      <div class="kv"><span><span data-l="ar">البريد الإلكتروني</span><span data-l="en">Email</span></span><b class="ltr">hello@binaa-ai.com</b></div>
+      <div class="kv"><span><span data-l="ar">واتساب</span><span data-l="en">WhatsApp</span></span><b class="ltr">+20 1X XXXX XXXX</b></div>
+      <div class="kv"><span><span data-l="ar">المقر</span><span data-l="en">Office</span></span><b><span data-l="ar">القاهرة، مصر</span><span data-l="en">Cairo, Egypt</span></b></div>
+    </div>
+
+    <div class="card reveal" style="padding:0;color:var(--text)" id="formCard">
+      <form class="card" id="leadForm" novalidate style="border:0;box-shadow:none">
+        <div class="field" id="fld-name">
+          <label for="f-name"><span data-l="ar">الاسم</span><span data-l="en">Full name</span></label>
+          <input id="f-name" name="name" autocomplete="name" required aria-describedby="e-name">
+          <span class="err" id="e-name" role="alert"></span>
+        </div>
+        <div class="form-row">
+          <div class="field" id="fld-phone">
+            <label for="f-phone"><span data-l="ar">رقم الموبايل أو الإيميل</span><span data-l="en">Mobile or email</span></label>
+            <input id="f-phone" name="contact" dir="ltr" autocomplete="tel" inputmode="email" required aria-describedby="e-phone">
+            <span class="err" id="e-phone" role="alert"></span>
+          </div>
+          <div class="field" id="fld-company">
+            <label for="f-company"><span data-l="ar">الشركة</span><span data-l="en">Company</span> <span class="opt"><span data-l="ar">(اختياري)</span><span data-l="en">(optional)</span></span></label>
+            <input id="f-company" name="company" autocomplete="organization">
+          </div>
+        </div>
+        <div class="field" id="fld-need">
+          <label for="f-need"><span data-l="ar">محتاج إيه؟</span><span data-l="en">What do you need?</span></label>
+          <select id="f-need" name="need" required aria-describedby="e-need">
+            <option value="" data-ar="اختار..." data-en="Choose...">اختار...</option>
+            <option value="assess" data-ar="جلسة تقييم مجانية" data-en="Free assessment">جلسة تقييم مجانية</option>
+            <option value="pilot" data-ar="مشروع تجريبي" data-en="Pilot project">مشروع تجريبي</option>
+            <option value="program" data-ar="برنامج للشركة" data-en="Company program">برنامج للشركة</option>
+            <option value="mcp" data-ar="بناء MCP server" data-en="Build an MCP server">بناء MCP server</option>
+            <option value="training" data-ar="كورس تدريبي" data-en="Training course">كورس تدريبي</option>
+          </select>
+          <span class="err" id="e-need" role="alert"></span>
+        </div>
+        <button class="btn btn-accent" type="submit"><span data-l="ar">احجز جلستي</span><span data-l="en">Book my session</span></button>
+        <p class="privacy"><span data-l="ar">بنستخدم بياناتك للتواصل معاك بس.</span><span data-l="en">We only use your details to contact you.</span></p>
+      </form>
+      <div class="success" id="success" hidden tabindex="-1" role="status">
+        <div class="check"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></div>
+        <h3><span data-l="ar">وصلنا طلبك، شكرًا!</span><span data-l="en">Request received, thank you!</span></h3>
+        <p><span data-l="ar">هنكلمك خلال يوم عمل نحدد ميعاد الجلسة.</span><span data-l="en">We'll contact you within one working day to schedule your session.</span></p>
+        <p class="note"><span data-l="ar">(نسخة تجريبية: النموذج لسه مش مربوط بإيميل.)</span><span data-l="en">(Preview: the form is not connected to email yet.)</span></p>
+        <button class="btn btn-outline btn-sm" type="button" id="again"><span data-l="ar">إرسال طلب تاني</span><span data-l="en">Send another request</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div style="display:grid;gap:12px;align-content:start">
+        <a class="logo" href="#top" aria-label="Binaa AI">
+          <svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#3D5A80"/><path d="M8 25V15l9-6 9 6v10" fill="none" stroke="#F7F6F2" stroke-width="2.2" stroke-linejoin="round"/><circle cx="17" cy="19" r="2.8" fill="#D9A86C"/></svg>
+          <span data-l="ar">بِناء AI</span><span data-l="en">Binaa AI</span>
+        </a>
+        <p><span data-l="ar">الذكاء الاصطناعي جوه شغل الموقع والمكتب الهندسي.</span><span data-l="en">AI inside the site and the engineering office.</span></p>
+      </div>
+      <div>
+        <h3><span data-l="ar">الموقع</span><span data-l="en">Site</span></h3>
+        <ul>
+          <li><a href="#solution"><span data-l="ar">الحل</span><span data-l="en">Solution</span></a></li>
+          <li><a href="#features"><span data-l="ar">حالات الاستخدام</span><span data-l="en">Use cases</span></a></li>
+          <li><a href="#pricing"><span data-l="ar">الباقات</span><span data-l="en">Plans</span></a></li>
+          <li><a href="#faq"><span data-l="ar">أسئلة شائعة</span><span data-l="en">FAQ</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3><span data-l="ar">تواصل</span><span data-l="en">Contact</span></h3>
+        <ul>
+          <li class="ltr">hello@binaa-ai.com</li>
+          <li><span data-l="ar">القاهرة، مصر</span><span data-l="en">Cairo, Egypt</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 <span data-l="ar">بِناء AI</span><span data-l="en">Binaa AI</span></span>
+      <span><span data-l="ar">من مهندسين إنشاءات في مصر</span><span data-l="en">Made by construction engineers in Egypt</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var T={
+    ar:{title:'Binaa AI | بِناء AI',btn:'EN',btnLabel:'Switch to English',
+        req:'من فضلك اكتب اسمك.',contact:'اكتب رقم موبايل صحيح أو إيميل.',need:'اختار نوع الخدمة.',menu:'القائمة'},
+    en:{title:'Binaa AI | AI for construction',btn:'عربي',btnLabel:'التبديل للعربية',
+        req:'Please enter your name.',contact:'Enter a valid mobile number or email.',need:'Choose a service.',menu:'Menu'}
+  };
+  var langBtn=document.getElementById('langBtn'),menuBtn=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu');
+  function lang(){return root.lang==='en'?'en':'ar'}
+  function setLang(l){
+    root.lang=l;root.dir=l==='ar'?'rtl':'ltr';document.title=T[l].title;
+    langBtn.textContent=T[l].btn;langBtn.setAttribute('aria-label',T[l].btnLabel);langBtn.lang=l==='ar'?'en':'ar';
+    menuBtn.setAttribute('aria-label',T[l].menu);
+    document.querySelectorAll('option[data-ar]').forEach(function(o){o.textContent=o.dataset[l]});
+    document.querySelectorAll('.field.invalid').forEach(function(f){validate(f.id)});
+    try{localStorage.setItem('binaa-lang',l)}catch(e){}
+  }
+  var saved=null;try{saved=localStorage.getItem('binaa-lang')}catch(e){}
+  setLang(saved==='en'?'en':'ar');
+  langBtn.addEventListener('click',function(){setLang(lang()==='ar'?'en':'ar')});
+
+  /* mobile menu */
+  function closeMenu(){menu.hidden=true;menuBtn.setAttribute('aria-expanded','false');document.getElementById('menuIcon').setAttribute('d','M4 7h16M4 12h16M4 17h16')}
+  menuBtn.addEventListener('click',function(){
+    var open=menu.hidden;menu.hidden=!open;menuBtn.setAttribute('aria-expanded',String(open));
+    document.getElementById('menuIcon').setAttribute('d',open?'M6 6l12 12M18 6L6 18':'M4 7h16M4 12h16M4 17h16');
+    if(open){var a=menu.querySelector('a');if(a)a.focus()}
+  });
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){closeMenu();menuBtn.focus()}});
+
+  /* header shadow */
+  var header=document.getElementById('header');
+  function onScroll(){header.classList.toggle('scrolled',window.scrollY>8)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* persona tabs (arrow-key navigation, RTL-aware) */
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function selectTab(t,focus){
+    tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',String(on));x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+    if(focus)t.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){selectTab(t)});
+    t.addEventListener('keydown',function(e){
+      var rtl=root.dir==='rtl',n=null;
+      if(e.key==='ArrowRight')n=rtl?i-1:i+1;
+      if(e.key==='ArrowLeft')n=rtl?i+1:i-1;
+      if(e.key==='Home')n=0;if(e.key==='End')n=tabs.length-1;
+      if(n!==null){e.preventDefault();selectTab(tabs[(n+tabs.length)%tabs.length],true)}
+    });
+  });
+
+  /* plan buttons preselect the form */
+  document.querySelectorAll('[data-need]').forEach(function(a){a.addEventListener('click',function(){document.getElementById('f-need').value=a.dataset.need;validate('fld-need')})});
+
+  /* form: inline validation */
+  var form=document.getElementById('leadForm'),success=document.getElementById('success');
+  var rules={
+    'fld-name':function(){return document.getElementById('f-name').value.trim().length>=2?'':'req'},
+    'fld-phone':function(){var v=document.getElementById('f-phone').value.trim();
+      var phone=/^\+?[\d\s-]{8,16}$/.test(v),mail=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);return phone||mail?'':'contact'},
+    'fld-need':function(){return document.getElementById('f-need').value?'':'need'}
+  };
+  function validate(id){
+    var f=document.getElementById(id),key=rules[id](),err=f.querySelector('.err'),inp=f.querySelector('input,select');
+    f.classList.toggle('invalid',!!key);f.classList.toggle('valid',!key);
+    inp.setAttribute('aria-invalid',key?'true':'false');
+    err.textContent=key?T[lang()][key]:'';
+    return !key;
+  }
+  Object.keys(rules).forEach(function(id){
+    var inp=document.getElementById(id).querySelector('input,select');
+    inp.addEventListener('blur',function(){if(inp.value)validate(id)});
+    inp.addEventListener('input',function(){if(document.getElementById(id).classList.contains('invalid'))validate(id)});
+    inp.addEventListener('change',function(){validate(id)});
+  });
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var firstBad=null;
+    Object.keys(rules).forEach(function(id){if(!validate(id)&&!firstBad)firstBad=document.getElementById(id).querySelector('input,select')});
+    if(firstBad){firstBad.focus();return}
+    form.hidden=true;success.hidden=false;success.focus();
+  });
+  document.getElementById('again').addEventListener('click',function(){
+    form.reset();Object.keys(rules).forEach(function(id){var f=document.getElementById(id);f.classList.remove('valid','invalid');f.querySelector('.err').textContent=''});
+    success.hidden=true;form.hidden=false;document.getElementById('f-name').focus();
+  });
+
+  /* scroll reveal: only items below the fold start hidden; reduced motion skips it */
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.remove('pending');io.unobserve(en.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el,i){
+      if(el.getBoundingClientRect().top>window.innerHeight){el.classList.add('pending');el.style.transitionDelay=(i%4)*60+'ms';io.observe(el)}
+    });
+  }
+})();
+</script>
+</body>
+</html>
